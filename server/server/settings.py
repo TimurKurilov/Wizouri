@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['web']
 # Application definition
 
 INSTALLED_APPS = [
+    'search.apps.SearchConfig',
     'content.apps.ContentConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,10 +54,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'server.urls'
 
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
