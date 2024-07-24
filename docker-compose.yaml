@@ -1,4 +1,4 @@
-version: '3.11'
+version: '3.8'
 
 services:
   db:
@@ -12,10 +12,8 @@ services:
     build: .
     restart: always
     volumes:
-      - ./server:/statica
-      - static_value:/statica/static/
-      - media_value:/statica/media/
-    working_dir: /statica
+      - static_value:/app/static/
+      - media_value:/app/media/
     depends_on:
       - db
     env_file:

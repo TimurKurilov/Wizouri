@@ -1,10 +1,21 @@
 FROM python:3.11-slim
 
+# Создать директорию вашего приложения.
+RUN mkdir /app
+
+# Скопировать с локального компьютера файл зависимостей
+# в директорию /app.
+COPY requirements.txt /app
+
+# Выполнить установку зависимостей внутри контейнера.
+RUN pip3 install -r /app/requirements.txt --no-cache-dir
+
+# Скопировать содержимое директории /api_yamdb c локального компьютера
+# в директорию /app.
+COPY server/ /app
+
+# Сделать директорию /app рабочей директорией. 
 WORKDIR /app
 
-COPY requirements.txt /app/
-RUN pip install -r requirements.txt
-
-COPY /server /app/server
-
-CMD ["gunicorn", "--chdir", "server", "--bind", ":8000", "server.wsgi:application"]
+# Выполнить запуск сервера разработки при старте контейнера.
+CMD ["gunicorn", "server.wsgi:application", "--bind", "0:8000" ]
