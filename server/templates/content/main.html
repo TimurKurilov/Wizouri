@@ -6,155 +6,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wizouri Weather</title>
   <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="header">
-    <h1 class="header__title">wizouri</h1>
-    <p class="header__description">Это сайт с погодой</p>
+    <h1>wizouri</h1>
+    <p class="header__description">Your description here</p>
   </div>
   <div class="card-container">
     <div class="card">
      <img src="https://images.unsplash.com/photo-1518355077561-4af7abce973d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt=Image, class="image">
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Нью Йорк</p>
+          <p class="card__subtitle">Температура: {{ new_york_weather.current.temp_c }}°C</p>
+          <p class="card__subtitle">Погода: {{ new_york_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
         <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt=Image, class="image">
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Москва</p>
+        <p class="card__subtitle">Температура: {{moscow_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ moscow_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://images.unsplash.com/photo-1509265226434-5f4ddbdb2f7a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Пекин</p>
+        <p class="card__subtitle">Температура: {{beijing_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ beijing_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://images.unsplash.com/photo-1600693273612-7957f0d83740?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Варшава</p>
+        <p class="card__subtitle">Температура: {{warsaw_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ warsaw_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://images.unsplash.com/photo-1526161202719-67a7615a3979?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Рим</p>
+        <p class="card__subtitle">Температура: {{rome_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ rome_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-        <img src="media/image/new-york.jpg", alt=Image>
+        <img src="https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt=Image, class='image'>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Берлин</p>
+        <p class="card__subtitle">Температура: {{berlin_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ berlin_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://images.unsplash.com/photo-1549693578-d683be217e58?q=80&w=1754&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Токио</p>
+        <p class="card__subtitle">Температура: {{tokyo_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ tokyo_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://images.unsplash.com/photo-1471874708433-acd480424946?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Париж</p>
+        <p class="card__subtitle">Температура: {{paris_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ paris_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://images.unsplash.com/photo-1468930830753-6699377de411?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Осло</p>
+        <p class="card__subtitle">Температура: {{oslo_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ oslo_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://images.unsplash.com/photo-1521066415397-46eef7ec423e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Берн</p>
+        <p class="card__subtitle">Температура: {{bern_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ bern_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <img src="media/image/new-york.jpg", alt=Image>
+      <img src="https://images.unsplash.com/photo-1663250429514-13a8f78352e1?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt=Image, class='image'>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Астана</p>
+        <p class="card__subtitle">Температура: {{astana_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ astana_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://images.unsplash.com/photo-1668123508899-eca1b6c2a2c4?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Вашингтон</p>
+        <p class="card__subtitle">Температура: {{washington_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ washington_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://plus.unsplash.com/premium_photo-1694475506820-6d7010c9f62c?q=80&w=1784&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Оттава</p>
+        <p class="card__subtitle">Температура: {{ottawa_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ ottawa_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://plus.unsplash.com/premium_photo-1661922394754-5d8d05a448cf?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Лондон</p>
+        <p class="card__subtitle">Температура: {{london_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ london_weather.current.condition.text }}</p>
       </div>
     </div>
     <div class="card">
-      <svg  viewBox="0 0 24 24">
-        <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"/>
-      </svg>
+      <img src="https://vistapointe.net/images/cleveland-8.jpg", class='image', alt=Image>
       <div class="card__content">
-        <p class="card__main-title">Главный Заголовок</p>
-        <p class="card__subtitle">Подзаголовок 1</p>
-        <p class="card__subtitle">Подзаголовок 2</p>
+        <p class="card__main-title">Кливленд</p>
+        <p class="card__subtitle">Температура: {{cleveland_weather.current.temp_c }}°C</p>
+        <p class="card__subtitle">Погода: {{ cleveland_weather.current.condition.text }}</p>
       </div>
     </div>
+  </div>
+  </div>
+  <div class="footer">
+    <a href="#" class="footer__link">или найдите что нибудь свое</a>
   </div>
 </body>
 </html>
