@@ -11,7 +11,7 @@
 <body>
   <div class="header">
     <h1>wizouri</h1>
-    <p class="header__description">Your description here</p>
+    <p class="header__description">Простой сайт с погодой</p>
   </div>
   <div class="card-container">
     <div class="card">
@@ -136,8 +136,8 @@
     </div>
   </div>
   </div>
-  <div class="footer">
-    <a href="#" class="footer__link">или найдите что нибудь свое</a>
+  <div class="header"> <!--create new class not header-->
+    <a href="{% url 'weather_search' %}" class="header__description">Или найдите что-либо свое</a>
   </div>
 </body>
 </html>
