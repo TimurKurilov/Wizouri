@@ -29,6 +29,7 @@
                     <img src="{{ weather_data.current.condition.icon }}" alt="{{ weather_data.current.condition.text }}" class="card-img">
                 </div>
             </div>
+            <a href="{% url 'daily_weather' %}?city={{ search }}">Посмотреть ежедневный прогноз</a><form method="get" action="{% url 'daily_weather' %}">
         {% endif %}
     </main>
 </body>

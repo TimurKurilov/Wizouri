@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles3.css' %}">
+    <title>Погода на 7 дней</title>
+</head>
+<body>
+    {% for day in weather_data.data %}
+    {% if forloop.counter <= 7 %}
+        <div class="day-card">
+            <h2>{{ day.datetime}}</h2>
+            <div class="temperature">Температура: {{ day.temp }}°C</div>
+            <div class="description">Погода: {{ day.weather.description }}</div>
+        </div>
+    {% endif %}
+{% endfor %}
+</body>
+</html>

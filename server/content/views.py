@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import os
 import requests
+from django.views.decorators.cache import cache_page
 from dotenv import load_dotenv
 
 load_dotenv()  # Загружаем переменные окружения из .env файла
@@ -15,7 +16,7 @@ def get_weather(url):
     else:
         print(f'Ошибка: {response.status_code}')
     return None
-
+@cache_page(60 * 1)
 def main_page(request):
     new_york_weather = get_weather(f'https://api.weatherapi.com/v1/current.json?key={key}&q=new-york&aqi=no')
     moscow_weather = get_weather(f'https://api.weatherapi.com/v1/current.json?key={key}&q=moscow&aqi=no')
