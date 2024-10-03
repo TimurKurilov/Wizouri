@@ -3,6 +3,8 @@ from .forms import SearchForm
 import requests
 from dotenv import load_dotenv
 import os
+import datetime
+from datetime import timedelta
 
 load_dotenv()
 
@@ -23,11 +25,15 @@ def weather_search(request):
 
 def daily_weather(request):
     search = request.GET.get('city')
-    weather_data = {} 
+    weather_data = {}
+    now = datetime.datetime.now()
+    now = now.strftime("%Y-%m-%d")
+    now_day = datetime.datetime.now() + timedelta(days=1)
+    now_day = now_day.strftime("%Y-%m-%d")
     if search:
         key = os.getenv('API_KEY2')
-        api_url = f'https://api.weatherbit.io/v2.0/forecast/daily?city={search}&key={key}'
+        api_url = f'https://api.weatherbit.io/v2.0/history/hourly?city={search}&start_date={now}&end_date={now_day}&key={key}'
         response = requests.get(api_url, verify=False)
         if response.status_code == 200:
                 weather_data = response.json()
-    return render(request, 'search/daily_weather.html', {'weather_data': weather_data, 'search': search})
+    return render(request, 'search/daily_weather.html', {'weather_data': weather_data, 'search': search})   

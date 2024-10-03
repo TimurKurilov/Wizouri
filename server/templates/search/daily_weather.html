@@ -8,14 +8,14 @@
     <title>Погода на 7 дней</title>
 </head>
 <body>
-    {% for day in weather_data.data %}
-    {% if forloop.counter <= 7 %}
-        <div class="day-card">
-            <h2>{{ day.datetime}}</h2>
-            <div class="temperature">Температура: {{ day.temp }}°C</div>
-            <div class="description">Погода: {{ day.weather.description }}</div>
-        </div>
-    {% endif %}
+    {% for hour in weather_data.data %}
+        {% if forloop.counter <= 8 %}   
+            <div class="day-card">
+                <h2>{{hour.datetime}}</h2>
+                <div class="temperature">Температура: {{ hour.temp }}</div>
+                <div class="description">Погода: {{ hour.weather.description }}</div>
+            </div>
+        {% endif %}
 {% endfor %}
 </body>
 </html>
